@@ -1,0 +1,1 @@
+# netology-homework-10-fault-tolerance-1-disaster-recovery-and-keepalived
