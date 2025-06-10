@@ -40,6 +40,36 @@
 
 ### Решение
 
+[Схема](task-1/hsrp_advanced_new.pkt)
+
+1. На Router1 Необходимо повысить приоритет на интерфейсе Gi0/1 до 95, иначе при разраве связи на Router2 интерфейса Gi0/0 приоритет интерфейса Gi0/1 этого же роутера станет равным 90, что всё равно выше приоритета интерфейса Gi0/1 роутера Router1 - 50.
+```
+en
+conf t
+int g0/1
+standby 1 priority 95
+standby 1 preempt
+standby 1 track g0/0
+exit
+exit
+exit
+```
+
+![](img/img-01-01.png)
+
+2. На Router2
+```
+en
+conf t
+int g0/1
+standby 1 track g0/0
+exit
+exit
+exit
+```
+
+![](img/img-01-02.png)
+
 ------
 
 ### Задание 2
